@@ -29,13 +29,14 @@ final public class LoSwift: UIViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
        // imageView.image = UIImage(named: "your_image_name") // Replace with your image name
-        let frameworkBundle = Bundle(for: LoSwift.self)
+        let frameworkBundle = Bundle.module
 
         // Load the image from the framework bundle
         if let image = UIImage(named: "phone-100", in: frameworkBundle, compatibleWith: nil) {
             imageView.image = image
         }
         // Add the UIImageView to the view hierarchy
+        imageView.backgroundColor = .green
         view.addSubview(imageView)
         
         // Set up Auto Layout constraints to center the UIImageView
