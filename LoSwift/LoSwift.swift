@@ -22,6 +22,7 @@ final public class LoSwift: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        view.backgroundColor = .red
     }
     
     func configureUI() {
