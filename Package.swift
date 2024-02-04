@@ -40,7 +40,7 @@ let package = Package(
                 
             ],
             resources: [
-                .process("Resources")
+                .process("Resources/Assets.xcassets")
             ]
         ),
         .testTarget(
