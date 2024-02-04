@@ -29,7 +29,7 @@ final public class LoSwift: UIViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
        // imageView.image = UIImage(named: "your_image_name") // Replace with your image name
-        let frameworkBundle = Bundle.module
+        let frameworkBundle = Bundle.init(for: LoSwift.self)
 
         // Load the image from the framework bundle
         if let image = UIImage(named: "phone-100", in: frameworkBundle, compatibleWith: nil) {
