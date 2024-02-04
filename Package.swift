@@ -26,7 +26,19 @@ let package = Package(
         .target(
             name: "LoSwift",
             dependencies: ["ObjectivePGP"],
-            path: "LoSwift"
+            path: "LoSwift",
+            exclude: [
+                "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/ObjectivePGP",
+                "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/Current/Resources/Info.plist",
+                "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/A/Resources/Info.plist",
+                "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/Current/Resources/LICENSE.txt",
+                "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Resources/Info.plist",
+                "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/A/ObjectivePGP",
+                "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Resources/LICENSE.txt",
+                "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/A/Resources/LICENSE.txt",
+                "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/Current/ObjectivePGP"
+                
+            ]
         ),
         .testTarget(
             name: "LoSwiftTests",
