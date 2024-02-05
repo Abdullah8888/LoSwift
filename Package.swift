@@ -38,10 +38,10 @@ let package = Package(
                 "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/A/Resources/LICENSE.txt",
                 "Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/Current/ObjectivePGP"
                 
+            ],
+            resources: [
+                .process("Resources/MyImages.bundle")
             ]
-//            resources: [
-//                .process("Resources/Assets.xcassets")
-//            ]
         ),
         .testTarget(
             name: "LoSwiftTests",
