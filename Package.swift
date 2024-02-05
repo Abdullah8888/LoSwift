@@ -40,7 +40,7 @@ let package = Package(
                 
             ],
             resources: [
-                .process("Resources/MyImages.bundle")
+                .copy("Resources/MyImages.bundle")
             ]
         ),
         .testTarget(
