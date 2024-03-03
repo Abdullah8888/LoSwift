@@ -29,13 +29,13 @@ final public class LoSwift: UIViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
        // imageView.image = UIImage(named: "your_image_name") // Replace with your image name
-        print("asdf is \(Bundle.main.bundlePath)")
+//        print("asdf is \(Bundle.main.bundlePath)")
 //        let frameworkBundlePath = Bundle.main.path(forResource: "LoSwift/Resources/MyImages", ofType: "bundle")
-        let frameworkBundle = Bundle(path: "/Users/abdullah/Documents/my_apps/LoSwift/LoSwift/Resources/MyImages.bundle/")
-        print("asdf is \(frameworkBundle?.bundlePath)")
-        //let frameworkBundle = Bundle.init(path: frameworkBundlePath!)
-        
-        print("lala is \(YourFrameworkClass.bundle)")
+//        let frameworkBundle = Bundle(path: "/Users/abdullah/Documents/my_apps/LoSwift/LoSwift/Resources/MyImages.bundle/")
+//        print("asdf is \(frameworkBundle?.bundlePath)")
+//        //let frameworkBundle = Bundle.init(path: frameworkBundlePath!)
+//
+//        print("lala is \(YourFrameworkClass.bundle)")
         // Load the image from the framework bundle
         if let image = UIImage(named: "icons8-phone-100-v2", in: BundleHelper.resolvedBundle, compatibleWith: nil) {
             imageView.image = image
