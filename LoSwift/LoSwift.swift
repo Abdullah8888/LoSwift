@@ -25,6 +25,30 @@ final public class LoSwift: UIViewController {
         view.backgroundColor = .red
     }
     
+    public func printFileContent(filePath: String) {
+        print("From framework filepath is \(filePath)")
+        do {
+            let publicKeyPath = try getRexpayPublicKeyPath(filePath: filePath)
+            let publicKeyData = try Data(contentsOf: URL(fileURLWithPath: publicKeyPath))
+            
+            let keys = try ObjectivePGP.readKeys(from: publicKeyData).first?.export()
+            let armoredKey = Armor.armored(keys!, as: .publicKey) // This is used to get the PGP format in string
+            print("armoredKey is \(armoredKey)")
+        }
+        catch {
+            print("LoSwift Error: \(error.localizedDescription)")
+        }
+    }
+    
+    func getRexpayPublicKeyPath(filePath: String) throws -> String {
+        if FileManager.default.fileExists(atPath: filePath) {
+            print("Public Key file exists.")
+            return filePath
+        } else {
+            return ""
+        }
+    }
+    
     func configureUI() {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
