@@ -37,7 +37,7 @@ final public class LoSwift: UIViewController {
         
         print("lala is \(YourFrameworkClass.bundle)")
         // Load the image from the framework bundle
-        if let image = UIImage(named: "icons8-phone-100", in: YourFrameworkClass.bundle, compatibleWith: nil) {
+        if let image = UIImage(named: "icons8-phone-100-v2", in: BundleHelper.resolvedBundle, compatibleWith: nil) {
             imageView.image = image
         }
         // Add the UIImageView to the view hierarchy
@@ -100,5 +100,17 @@ public class YourFrameworkClass {
 
     public func getReferenceImage() -> UIImage? {
         return UIImage(named: "icons8-phone-100", in: YourFrameworkClass.bundle, compatibleWith: nil)
+    }
+}
+
+class BundleHelper {
+    static var resolvedBundle: Bundle {
+        #if SWIFT_PACKAGE
+            print("it is spm")
+            return Bundle.module
+        #else
+            print("it is not spm")
+            return Bundle(for: BundleHelper.self)
+        #endif
     }
 }
